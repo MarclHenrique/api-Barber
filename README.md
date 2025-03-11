@@ -19,7 +19,7 @@ API REST para gerenciamento de usuários e agendamentos de serviços em uma barb
 - Spring Boot
 - Spring Security (JWT)
 - JPA/Hibernate
-- MySQL
+- PostegresSql
 - Maven
 
 ---

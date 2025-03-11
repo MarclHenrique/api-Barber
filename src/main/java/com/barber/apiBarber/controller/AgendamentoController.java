@@ -1,21 +1,19 @@
-package com.barber.apiBarber.Controller;
+package com.barber.apiBarber.controller;
 
-import com.barber.apiBarber.Model.Agendamento;
-import com.barber.apiBarber.Services.AgendamentoService;
-import com.barber.apiBarber.Security.JwtUtil;
+import com.barber.apiBarber.model.Agendamento;
+import com.barber.apiBarber.services.AgendamentoService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/agendamentos")
 public class AgendamentoController {
 
-    @Autowired
+    /*@Autowired
     private AgendamentoService agendamentoService;
 
     @Autowired
@@ -56,5 +54,5 @@ public class AgendamentoController {
         }
 
         return ResponseEntity.ok(agendamentoService.listarAgendamentosUsuario(usuarioId));
-    }
+    }*/
 }

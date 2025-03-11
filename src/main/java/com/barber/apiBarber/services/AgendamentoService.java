@@ -1,7 +1,7 @@
-package com.barber.apiBarber.Services;
+package com.barber.apiBarber.services;
 
-import com.barber.apiBarber.Model.Agendamento;
-import com.barber.apiBarber.Model.User;
+import com.barber.apiBarber.model.Agendamento;
+import com.barber.apiBarber.model.User;
 import com.barber.apiBarber.Repository.AgendamentoRepository;
 import com.barber.apiBarber.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

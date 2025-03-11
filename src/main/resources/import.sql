@@ -1,0 +1,1 @@
+INSERT INTO users (username, email, password, role, atende_domicilio, servicos, contato) VALUES ('Marcos', 'marcos@gmail.com', '$2a$10$WAYMAq9pS9nueuEulY5eWua7NxZ55PaGv7U2bMFO1sre0TwXYjBze', 'ROLE_BARBEIRO', true, 'Corte, Barba', 'telefone');

@@ -1,7 +1,7 @@
-package com.barber.apiBarber.Controller;
+package com.barber.apiBarber.controller;
 
-import com.barber.apiBarber.Model.User;
-import com.barber.apiBarber.Services.UserService;
+import com.barber.apiBarber.model.User;
+import com.barber.apiBarber.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

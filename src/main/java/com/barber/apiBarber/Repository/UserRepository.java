@@ -1,6 +1,6 @@
 package com.barber.apiBarber.Repository;
 
-import com.barber.apiBarber.Model.User;
+import com.barber.apiBarber.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

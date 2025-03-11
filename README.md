@@ -1,3 +1,5 @@
+# API Barber Shop
+
 API REST para gerenciamento de usuários e agendamentos de serviços em uma barbearia.
 
 ## 📜 Índice

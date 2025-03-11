@@ -1,11 +1,9 @@
 package com.barber.apiBarber.Controller;
 
-import com.barber.apiBarber.Dto.UserDto;
 import com.barber.apiBarber.Model.User;
 import com.barber.apiBarber.Repository.UserRepository;
 import com.barber.apiBarber.Security.JwtUtil;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

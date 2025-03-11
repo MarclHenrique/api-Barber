@@ -21,9 +21,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable()) // Desativa CSRF para APIs REST
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // API sem estado (JWT)
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST, "/api/users/register", "/auth/login").permitAll() // Permite acesso ao cadastro
+                        .requestMatchers(
+                                HttpMethod.POST, "/api/users/register",
+                                "/auth/login"
+                        ).permitAll()
                         .anyRequest().authenticated() // Exige autenticação para todas as outras rotas
                 );
 

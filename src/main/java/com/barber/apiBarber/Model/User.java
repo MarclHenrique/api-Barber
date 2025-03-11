@@ -6,7 +6,6 @@ import lombok.*;
 @Entity
 @Table(name = "users")
 @Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
 public class User {
 
     @Id
@@ -14,7 +13,7 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String username;
 
     @Column(nullable = false, unique = true)
     private String email;

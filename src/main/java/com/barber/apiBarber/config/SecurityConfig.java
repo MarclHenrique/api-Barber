@@ -1,10 +1,10 @@
-package com.barber.apiBarber;
-
+package com.barber.apiBarber.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -14,16 +14,19 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(); // Usado para criptografar senhas
+        return new BCryptPasswordEncoder(); // Criptografia de senha
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable() // Desabilita CSRF (necessário para endpoints REST)
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/api/users/register").permitAll() // Permite o acesso ao cadastro sem autenticação
-                        .anyRequest().authenticated() // Exige autenticação para os outros endpoints
+        http
+                .csrf(csrf -> csrf.disable()) // Desativa CSRF para APIs REST
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // API sem estado (JWT)
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(HttpMethod.POST, "/api/users/register", "/auth/login").permitAll() // Permite acesso ao cadastro
+                        .anyRequest().authenticated() // Exige autenticação para todas as outras rotas
                 );
+
         return http.build();
     }
 }

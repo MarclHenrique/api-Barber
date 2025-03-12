@@ -24,6 +24,29 @@ API REST para gerenciamento de usuários e agendamentos de serviços em uma barb
 
 ---
 
+## Banco de Dados Hospedado no Railway
+
+O banco de dados PostgreSQL utilizado neste projeto está hospedado na plataforma Railway, uma solução de infraestrutura como serviço (IaaS) que facilita a criação, configuração e gestão de bancos de dados.
+
+### Como acessar o banco de dados?
+
+O acesso ao banco de dados PostgreSQL é feito por meio da URL de conexão fornecida pelo Railway, que inclui as informações necessárias para a conexão, como o hostname, a porta, o nome do banco de dados, o nome de usuário e a senha. Essas informações estão configuradas no arquivo `application.properties` da aplicação.
+
+### Exemplo de Configuração no `application.properties`
+
+```properties
+# Configuração do banco de dados PostgreSQL no Railway
+spring.datasource.url=jdbc:postgresql://<hostname>:<port>/<database_name>?sslmode=require
+spring.datasource.username=<username>
+spring.datasource.password=<password>
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# Configuração do JPA / Hibernate
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+
 ## 📦 Instalação e Execução
 
 ### Clone o repositório:

@@ -56,25 +56,7 @@ git clone https://github.com/seu-usuario/api-barber-shop.git
 cd api-barber-shop
 ```
 
-### Configure o banco de dados no `application.properties`:
 
-```properties
-# Configuração do banco de dados PostgreSQL no Neon
-spring.datasource.url=jdbc:postgresql://ep-gentle-salad-a8863fo9-pooler.eastus2.azure.neon.tech/BarberShop?sslmode=require
-spring.datasource.username=BarberShop_owner
-spring.datasource.password=npg_p2CXwGPLOQ9h
-spring.datasource.driver-class-name=org.postgresql.Driver
-```
-```properties
-# Configuração do JPA / Hibernate
-spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
-jwt.secret=
-jwt-expiration=900000
-jwt.refresh.expiration = 600000000000
-```
 ### Instale as dependências e rode o projeto:
 
 ```sh
